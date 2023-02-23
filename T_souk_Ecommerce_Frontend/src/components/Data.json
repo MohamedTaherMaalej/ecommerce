@@ -1,0 +1,43 @@
+{
+  "english": {
+    "card": "paresh sapkale",
+    "Offer": "offer on",
+    "fresh": "fresh",
+    "gmo": "Non GMO",
+    "Fruits": "Fruits",
+    "f": "fresh fruits online at the best prices. Order your favourite fruits the online F&V store.",
+    "OrganicItems": "Organic Items",
+    "o": "Swith to traditionally processed natural Bio Basics products. Be​ organic & Buy organic now.",
+    "Vegetables": "Vegetables",
+    "v": "Shop for only the best quality produce and vegetables online. Shop more to save more",
+    "non": "Non-veg​ Meals",
+    "non1": "ultimate destination to buy premium and high-quality fresh eggs,fish and meat",
+    "Add1": "Add To Cart",
+    "Add" : "Add",
+    "Home": "Home",
+    "About": "About",
+    "Login": "Login",
+    "Register": "Register"
+  },
+
+  "hindi": {
+    "card": "परेश सपकाले",
+    "Offer": "ऑफ़र चालू",
+    "gmo": "जीएमओ मुक्त",
+    "fresh": "ताज़ा",
+    "Fruits": "फल",
+    "f": "सबसे अच्छे दामों पर ऑनलाइन ताजे फल। अपने पसंदीदा फलों को ऑनलाइन स्टोर पर ऑर्डर करें।",
+    "OrganicItems": "ऑर्गेनिक आइटम",
+    "o": "पारंपरिक रूप से संसाधित प्राकृतिक बायो बेसिक्स उत्पादों पर स्विच करें। ऑर्गेनिक हैं और अभी ऑर्गेनिक खरीदें.",
+    "Vegetables": "सब्ज़ियाँ",
+    "v": "केवल सर्वोत्तम गुणवत्ता वाली उपज और सब्जियों की ऑनलाइन खरीदारी करें। अधिक बचत करने के लिए अधिक खरीदारी करें",
+    "non": "मांसाहारी",
+    "non1": "प्रीमियम और उच्च गुणवत्ता वाले ताजे अंडे, मछली और मांस खरीदने के लिए अंतिम गंतव्य",
+    "Add1": "कार्ट में जोड़ें",
+    "Add": "जोड़ें",
+    "Home": "होम",
+    "About": "टीम के बारे में",
+    "Login": "लॉगिन",
+    "Register": "पंजीकरण"
+  }
+}
