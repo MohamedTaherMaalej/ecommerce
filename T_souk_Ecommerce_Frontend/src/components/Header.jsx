@@ -1,6 +1,6 @@
 import "../App.css";
 import { useSelector } from "react-redux";
-import web1 from "../img/logo p.png";
+import web10 from "../img/logo.png";
 
 function Header() {
   const state = useSelector((state) => state);
@@ -23,9 +23,9 @@ function Header() {
         ) : (
           ""
         )}
-        {/* <a class="navbar-brand">
-          <img width="250" src={web1} class="d-block w-100" className="w-100" />
-        </a> */}
+        { <a class="navbar-brand">
+          <img width="250" src={web10} class="d-block w-100" className="w-100" />
+        </a> }
         <div className="clearfix"></div>
       </div>
     </div>
