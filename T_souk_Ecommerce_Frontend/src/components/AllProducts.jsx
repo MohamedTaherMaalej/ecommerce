@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import Translation from "./Data.json";
 import "../App.css";
 import axios from "axios";
-import web1 from "../img/zc.jpg";
+import web1 from "../img/sales0.jpg";
 import ph2 from "../img/zc29.png";
 import ph1 from "../img/zc1.png";
 import ph3 from "../img/zc30.jpg";
 import ph4 from "../img/zc27.jpg";
-import web2 from "../img/general2.png";
-import web3 from "../img/general4.png";
+import web2 from "../img/sales1.jpg";
+import web3 from "../img/sales2.jpg";
 
 import ReactPaginate from "react-paginate";
 import { useDispatch, useSelector } from "react-redux";
@@ -165,7 +165,7 @@ function Allproduct() {
                       <div class="container">
                         <div class="content">
                           <p style={{ color: "##F9FEFD", fontSize: "2em" }}>
-                            {"Offer"}
+                            {" "}
                           </p>
                         </div>
                       </div>
@@ -182,7 +182,7 @@ function Allproduct() {
                       <div class="container">
                         <div class="content">
                           <p style={{ color: "##F9FEFD", fontSize: "2em" }}>
-                            {"fresh"}
+                            {"PROMO"}
                           </p>
                         </div>
                       </div>
@@ -199,7 +199,7 @@ function Allproduct() {
                       <div class="container">
                         <div class="content">
                           <p style={{ color: "##F9FEFD", fontSize: "2em" }}>
-                            {"gmo"}
+                            {"Nouveau"}
                           </p>
                         </div>
                       </div>
