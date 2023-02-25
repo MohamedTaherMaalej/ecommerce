@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import LoginRegisterMenu from "./LoginRegisterMenu";
 import "./navbar.css";
-import { BsFillPersonFill, BsFillBasket3Fill, BsFillCartFill, BsFillPersonDashFill} from "react-icons/bs";
+import { BsFillPersonFill, BsFillBasket3Fill, BsFillCartFill, BsFillPersonDashFill, BsFillBasket2Fill, BsFillCartCheckFill} from "react-icons/bs";
 const RoleNavbar = ({ isLoggedIn }) => {
   const logout = (e) => {
     dispatch({ type: "LogOut" });
@@ -12,15 +12,17 @@ const RoleNavbar = ({ isLoggedIn }) => {
   const state = useSelector((state) => state);
   const history = useHistory();
   const dispatch = useDispatch();
-  console.log(sessionStorage.getItem("role"), isLoggedIn);
+
   if (!isLoggedIn) {
     return <LoginRegisterMenu />;
   } else if (sessionStorage.getItem("role") === "customer") {
     return (
       <ul className="navbar-nav ml-auto nav">
-        <li className="nav-item active">
+        <li className="nav-item">
           <Link className="nav-link" to="/cart">
-            Voir panier{" "}
+          <BsFillBasket2Fill/>
+          &nbsp;
+            Panier{" "}
             {state.cart.length === 0 ? (
               ""
             ) : (
@@ -34,17 +36,22 @@ const RoleNavbar = ({ isLoggedIn }) => {
         </li>
         <li className="nav-item nav">
           <Link className="nav-link" to="/cprofile">
+          <BsFillPersonFill/>
+            &nbsp;
             Profile
           </Link>
         </li>
         <li className="nav-item">
           <Link className="nav-link" to="/myorders">
-            
+            <BsFillCartCheckFill/>
+            &nbsp;
             Mes ordres
           </Link>
         </li>
         <li className="nav-item">
           <Link className="nav-link" onClick={logout} to="#">
+          <BsFillCartFill/>
+          &nbsp;
             Déconnexion
           </Link>
         </li>

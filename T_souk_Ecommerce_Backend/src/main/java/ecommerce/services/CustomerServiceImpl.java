@@ -1,13 +1,11 @@
 package ecommerce.services;
 
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ecommerce.daos.CustomerDao;
 import ecommerce.entities.Customer;
-import ecommerce.entities.Seller;
 
 @Service
 public class CustomerServiceImpl implements CustomerService {
@@ -17,12 +15,6 @@ public class CustomerServiceImpl implements CustomerService {
 	@Override
 	public void registerCustomer(Customer cust) {
 		dao.save(cust);
-	}
-
-	@Override
-	public List<Customer> allCustomers() {
-		// TODO Auto-generated method stub
-		return dao.findAll();
 	}
 
 	@Override
@@ -53,12 +45,6 @@ public class CustomerServiceImpl implements CustomerService {
 			cust.setPwd(findById(cust.getId()).getPwd());
 		}
 		dao.save(cust);	
-	}
-	@Override
-	public void deleteCustomers(int id) {
-		// TODO Auto-generated method stub
-		Customer customer=dao.getById(id);
-		dao.delete(customer);
 	}
 	
 }

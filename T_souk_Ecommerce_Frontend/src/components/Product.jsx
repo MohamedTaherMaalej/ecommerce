@@ -2,26 +2,25 @@ import ReactStars from "react-rating-stars-component";
 import React from "react";
 import "../App.css";
 
-const ratingChanged = (newRating) => {
-  console.log(newRating);
-};
-
+import {
+  MDBCard,
+  MDBCardBody,
+  MDBCardText,
+  MDBCardImage
+} from 'mdb-react-ui-kit';
 function Product(props) {
   const { x, showModal, demo } = props;
   return (
     <div className="col-sm-3" key={x.prodid}>
-      <div
-        className="card text-center text-black mb-3 bg-transparent"
-        style={{ boxShadow: "0 0 1px 1px white" }}
-      >
-        <div className="card-body py-1 bg-transparent">
-          <img
-            onClick={(e) => showModal(x)}
-            style={{ width: "240px", height: "220px", marginBottom: "10px" }}
-            src={"http://localhost:8080/" + x.photo}
-            className="img-thumnail"
-          />
-          <h4 class="font-weight-bold">{x.pname}</h4>
+    <MDBCard style={{backgroundColor:"white"}}>
+    <div className="course_card">
+      <MDBCardImage onClick={(e) => showModal(x)} src={"http://localhost:8080/" + x.photo} alt='...' position='top'
+      style={{height: "200px"}}
+      />
+      </div>
+      <MDBCardBody>
+        <MDBCardText>
+        <h4 class="font-weight-bold">{x.pname}</h4>
           <h6 className="text-center">Type :{x.brand}</h6>
           <link
             rel="stylesheet"
@@ -29,18 +28,18 @@ function Product(props) {
           />
           <div class="form-floating">
             <label for="floatingTextarea">
-              Rating{" "}
+              Notation{" "}
               <ReactStars
                 count={5}
-                onChange={ratingChanged}
                 size={24}
                 activeColor="#ffd700"
               />
             </label>
           </div>
-          <h5 class="font-weight-bold my-3">Price: {x.price} DT </h5>
-        </div>
-      </div>
+          <h5 class="font-weight-bold my-3">Prix: {x.price} DT </h5>
+        </MDBCardText>
+      </MDBCardBody>
+    </MDBCard>
     </div>
   );
 }

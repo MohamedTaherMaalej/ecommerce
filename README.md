@@ -1,4 +1,4 @@
-# Ecommerce site made with React with Springboot MVC 
+# Ecommerce site made with React & Springboot MVC 
 
 
 
@@ -7,7 +7,7 @@
 * Technologies
 * Features
 * How to run
-* Future Work
+
 
 # 👩‍💻Technologies
 * React
@@ -30,7 +30,7 @@
 npm install
 npm start
 ```
-### Add some npm dependency
+### Add some npm dependency (if necessary)
 
 #### 🌟React lib
 * Intall axios: (promise-based HTTP Client for node.js and the browser aka middleware) 
@@ -64,7 +64,7 @@ npm install web-vitals
 ```
 npm install bootstrap@v5.2.1 
 ```
-* Sweetalert (replace alert prompt) { Ref URL :https://sweetalert2.github.io/}
+* Sweetalert (replace alert prompt) 
 ```
 npm install sweetalert2
 ```

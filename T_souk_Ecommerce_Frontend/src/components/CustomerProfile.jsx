@@ -15,12 +15,10 @@ function CustomerProfile() {
     userid: "",
     pwd: "",
     phone: "",
-    gender: "",
   });
 
   useEffect(() => {
     axios.get("http://localhost:8080/api/customers/" + id).then((resp) => {
-      console.log(resp.data.data);
       setUser(resp.data.data);
     });
   }, []);
@@ -37,7 +35,7 @@ function CustomerProfile() {
         Swal.fire({
           position: "top-end",
           icon: "success",
-          title: "Profile updated successfully",
+          title: "Profile editer avec succés",
           showConfirmButton: false,
           timer: 1500,
         });
@@ -49,19 +47,19 @@ function CustomerProfile() {
     <div className="container text-black">
       <div className="row">
         <div className="col-sm-7 mx-auto">
-          <div className="card shadow bg-transparent mt-3">
+          <div className="card shadow mt-3">
             <div className="card-body">
               <h4 className="text-sm-center p-5">
                 <style>
                   @import
                   url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
                 </style>
-                <b className="b">Welcome {uname}</b>
+                <b className="b">Bienvenue {uname}</b>
               </h4>
               <form onSubmit={handleSubmit}>
                 <div className="form-group form-row">
                   <label className="col-sm-4 form-control-label">
-                    Customer Name
+                    Nom
                   </label>
                   <div className="col-sm-8">
                     <input
@@ -74,7 +72,7 @@ function CustomerProfile() {
                   </div>
                 </div>
                 <div className="form-group form-row">
-                  <label className="col-sm-4 form-control-label">City</label>
+                  <label className="col-sm-4 form-control-label">Ville</label>
                   <div className="col-sm-8">
                     <input
                       type="text"
@@ -86,23 +84,7 @@ function CustomerProfile() {
                   </div>
                 </div>
                 <div className="form-group form-row">
-                  <label className="col-sm-4 form-control-label">Gender</label>
-                  <div className="col-sm-8">
-                    <select
-                      required
-                      name="gender"
-                      value={user.gender}
-                      onChange={handleInput}
-                      className="form-control"
-                    >
-                      <option value="">Select Gender</option>
-                      <option>Male</option>
-                      <option>Female</option>
-                    </select>
-                  </div>
-                </div>
-                <div className="form-group form-row">
-                  <label className="col-sm-4 form-control-label">User Id</label>
+                  <label className="col-sm-4 form-control-label">Id</label>
                   <div className="col-sm-8">
                     <input
                       type="text"
@@ -115,7 +97,7 @@ function CustomerProfile() {
                   </div>
                 </div>
                 <div className="form-group form-row">
-                  <label className="col-sm-4 form-control-label">Phone</label>
+                  <label className="col-sm-4 form-control-label">Téléphone</label>
                   <div className="col-sm-8">
                     <input
                       type="text"
@@ -129,7 +111,7 @@ function CustomerProfile() {
                 </div>
                 <div className="form-group form-row">
                   <label className="col-sm-4 form-control-label">
-                    Password
+                    M.d.p
                   </label>
                   <div className="col-sm-8">
                     <input
@@ -142,7 +124,7 @@ function CustomerProfile() {
                   </div>
                 </div>
                 <button className="btn btn-lg btn-primary btn-block btn-signin">
-                  Update Profile
+                  Editer
                 </button>
               </form>
             </div>

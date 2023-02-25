@@ -37,7 +37,6 @@ public class ProductController {
 	
 	@PostMapping
 	public ResponseEntity<?> saveProduct(ProductDTO dto) {
-		System.out.println(dto);
 		Product product=ProductDTO.toEntity(dto);
 		Seller seller=sellerService.findById(dto.getSellerId());
 		product.setSeller(seller);
@@ -46,8 +45,7 @@ public class ProductController {
 	}
 	
 	@PutMapping("{id}")
-	public ResponseEntity<?> updateProduct(@RequestBody Product product,@PathVariable("id") int id) {
-		System.out.println(product);		
+	public ResponseEntity<?> updateProduct(@RequestBody Product product,@PathVariable("id") int id) {		
 		productService.updateProduct(product);
 		return Response.success(product);		
 	}

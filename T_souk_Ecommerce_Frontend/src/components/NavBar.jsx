@@ -1,29 +1,26 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import RoleNavbar from "./RoleNavbar";
-import { useEffect, useState } from "react";
-import Translation from "./Data.json";
 import "./navbar.css";
 import { BsFillHouseFill, BsFillBookmarkStarFill,  } from "react-icons/bs";
+import ph1 from "../img/result (1).png"
 const { Fragment } = require("react");
-
 function NavBar() {
   const state = useSelector((state) => state);
-  console.log("LoggedIn ", state.loggedin);
-  console.log("Cart ", state.cart);
 
   return (
     <Fragment>
         <div>
       <div className="clearfix"></div>
       <nav
-        className="navbar navbar-expand-lg navbar-dark bg-dark"
-        style={{ top: 0, zIndex: "1000", height:100}}
+        className="navbar navbar-expand-lg navbar-dark"
+        style={{ top: 0, zIndex: "1000", height:100, backgroundColor:"peru"}}
       >
-        {" "}
-        <ul className="navbar-nav nav">
+        <img src={ph1} style={{width:"10%", heigth:"50%"}} className="l"/>
+        <ul className="navbar-nav nav" style={{display:"flex"}}>
           <li className="nav-item ">
             <Link className="nav-link" to="/">
+            
               <BsFillHouseFill />
               &nbsp;
                Accueil

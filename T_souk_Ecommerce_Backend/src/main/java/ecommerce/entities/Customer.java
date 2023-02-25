@@ -1,5 +1,6 @@
 package ecommerce.entities;
 
+
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -20,18 +21,10 @@ public class Customer {
 	private String userid;
 	private String pwd;
 	private String phone;
-	private String gender;
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "created_timestamp", insertable = false, updatable = false)
 	private Date createdTimestamp=new Date();
-	
-	
-	public String getGender() {
-		return gender;
-	}
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
+		
 	public int getId() {
 		return id;
 	}
@@ -74,9 +67,17 @@ public class Customer {
 	public void setCreatedTimestamp(Date createdTimestamp) {
 		this.createdTimestamp = createdTimestamp;
 	}
+	
+	
+	/*public List<Product> getProductList() {
+		return productList;
+	}
+	public void setProductList(List<Product> productList) {
+		this.productList = productList;
+	}*/
 	@Override
 	public String toString() {
-		return "Customer [id=" + id + ", name=" + name + ", city=" + city + ", userid=" + userid + ", pwd=" + pwd
+		return "Seller [id=" + id + ", name=" + name + ", city=" + city + ", userid=" + userid + ", pwd=" + pwd
 				+ ", phone=" + phone + ", createdTimestamp=" + createdTimestamp + "]";
 	}
 	
