@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import RoleNavbar from "./RoleNavbar";
 import "./navbar.css";
 import { BsFillHouseFill, BsFillBookmarkStarFill,  } from "react-icons/bs";
-import ph1 from "../img/result (1).png"
+import ph1 from "../img/logo-no-background.png"
 const { Fragment } = require("react");
 function NavBar() {
   const state = useSelector((state) => state);
