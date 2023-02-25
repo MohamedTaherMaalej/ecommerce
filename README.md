@@ -1,35 +1,3 @@
-# Ecommerce site made with React & Springboot MVC 
-
-
-
-
-# 📃Table of Contents
-* Technologies
-* Features
-* How to run
-
-
-# 👩‍💻Technologies
-* React
-* Bootstrap 
-* MySql
-* Springboot
-
-
-# 😊Features
-* List Products
-* Add products to Cart
-* Add product by seller
-* Admin control
-
-# 👷 How to run
-## On React  
-
-* Install dependencies and start
-```
-npm install
-npm start
-```
 # Préparation d'environnement
 ## React
 
