@@ -1,7 +1,7 @@
 import React from 'react';
 import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
 import {BsWhatsapp, BsTwitter, BsLinkedin, BsFacebook, BsGithub } from "react-icons/bs";
-import ph1 from "../img/result (1).png"
+import ph1 from "../img/logo-no-background.png"
 export default function Footer() {
   return (
     <MDBFooter bgColor='light' className='text-center text-lg-start text-muted'>
