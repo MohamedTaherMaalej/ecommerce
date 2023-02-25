@@ -20,19 +20,19 @@ function SellerProfile() {
   }, []);
   return (
     <div className="container">
-      <div className="card shadow m-5 p-3 bg-transparent text-black text-center">
+      <div className="card shadow m-5 p-3 text-black text-center">
         <h4 className="text-sm-center p-5">
           <style>
             @import
             url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
           </style>
           <h4 className="b">
-            Welcome <br /> {user.name}
+            Bienvenue <br /> {user.name}
           </h4>
         </h4>
-        <h5>User Id : {user.userid}</h5>
-        <h5>City : {user.city}</h5>
-        <h5>Contact No : {user.phone}</h5>
+        <h5>Id : {user.userid}</h5>
+        <h5>Ville : {user.city}</h5>
+        <h5>Téléphone: {user.phone}</h5>
       </div>
     </div>
   );

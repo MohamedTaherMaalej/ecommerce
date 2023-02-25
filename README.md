@@ -1,83 +1,31 @@
-# Ecommerce site made with React & Springboot MVC 
-
-
-
-
-# 📃Table of Contents
-* Technologies
-* Features
-* How to run
-
-
-# 👩‍💻Technologies
-* React
-* Bootstrap 
-* MySql
-* Springboot
-
-
-# 😊Features
-* List Products
-* Add products to Cart
-* Add product by seller
-* Admin control
-
-# 👷 How to run
-## On React  
+# Préparation d'environnement
+## React
 
 * Install dependencies and start
 ```
 npm install
 npm start
 ```
-### Add some npm dependency (if necessary)
-
-#### 🌟React lib
-* Intall axios: (promise-based HTTP Client for node.js and the browser aka middleware) 
-```
-npm install axios
-```
-* Install Cors: (allows you to make requests to the server)
-```
-npm install cors
-```
-* Install React DOM: (entry point to the DOM and server renderers)
-```
-npm install react react-dom
-```
-* Install react-paginate:
-```
-npm install react-paginate --save
-```
-* Install React Redux (building the user interface)
-```
-# JS
-npx create-react-app my-app --template redux
-```
-
-*Intsall web-vitals (shows how your pages perform, based on real world usage data)
-```
-npm install web-vitals
-```
-#### ✨For Design Purpuse (UI/UX)
-* Install bootstrap npm 
-```
-npm install bootstrap@v5.2.1 
-```
-* Sweetalert (replace alert prompt) 
-```
-npm install sweetalert2
-```
-#### 🧾For database connectivity
+#### Base de données
 
 
-* Install MySQL
+* Installer MySQLinstaller
 ```
-npm install mysql
+Installer sqlserver
+MySQL Workbench
 ```
-## On MySQL 
-* create new database
+## Dans MySQLWorkbench
+* Créer une base de données
 ```
-create database ecommerce
-use ecommerce
+create database ecommerce;
+use ecommerce;
+```
+## Spring Boot
+* Modifier le fichier application.properties
+```
+disk.upload.basepath=<choisir l'emplacement>
+spring.datasource.url=jdbc:mysql://localhost:3306/<nom de la bdd>
+spring.datasource.username=<nom d'utilisateur>
+spring.datasource.password=<mot de passe>
+
 ```

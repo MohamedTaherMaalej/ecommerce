@@ -2,8 +2,6 @@ package ecommerce.models;
 
 import java.util.List;
 
-import ecommerce.entities.Product;
-
 public class ProductPagedResponseDTO {
 	private List<ProductResponseDTO> plist;
 	private int current;

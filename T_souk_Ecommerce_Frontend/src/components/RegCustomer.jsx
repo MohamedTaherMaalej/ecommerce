@@ -12,7 +12,6 @@ function RegCustomer() {
     pwd: "",
     cpwd: "",
     phone: "",
-    gender: "",
   });
   const [errors, setErrors] = useState({});
   const history = useHistory();
@@ -25,16 +24,10 @@ function RegCustomer() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors(uservalidation(user));
-    if (!user.gender) {
-      errors.gender = "Gender is required";
-    }
     setSubmitted(true);
   };
 
   useEffect(() => {
-    if (!user.gender) {
-      errors.gender = "Gender is required";
-    }
     console.log(errors);
 
     if (Object.keys(errors).length === 0 && submitted) {

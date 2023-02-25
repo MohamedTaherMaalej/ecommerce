@@ -18,8 +18,8 @@ function MyProducts() {
 
   const deleteProduct = (prodid) => {
     let resp = Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
+      title: "Etes-vous sur?",
+      text: "Processus irréversible!",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
@@ -27,7 +27,7 @@ function MyProducts() {
       confirmButtonText: "Yes, delete it!",
     }).then((resp) => {
       if (resp.isConfirmed) {
-        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+        Swal.fire("Suprimé!", "", "success");
         axios.delete("http://localhost:8080/api/products/" + prodid);
         axios
           .get("http://localhost:8080/api/products?sellerid=" + sellerid)
@@ -48,16 +48,16 @@ function MyProducts() {
               @import
               url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
             </style>
-            <b className="b">All product list</b>
+            <b className="b">Mes produits</b>
           </h4>
           <table className="table table-hover">
             <thead className="table-dark table-hover">
               <tr>
-                <th>Product Photo</th>
-                <th>Name</th>
-                <th>Category</th>
+                <th>Photo</th>
+                <th>Nom</th>
+                <th>Categorie</th>
                 <th>Type</th>
-                <th>Price</th>
+                <th>Prix</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -80,13 +80,13 @@ function MyProducts() {
                       to={"/edit/" + x.prodid}
                       className="btn btn-primary btn-sm mr-2"
                     >
-                      Edit
+                      Editer
                     </Link>
                     <button
                       onClick={() => deleteProduct(x.prodid)}
                       className="btn btn-danger btn-sm"
                     >
-                      Delete
+                      Supprimer
                     </button>
                   </td>
                 </tr>

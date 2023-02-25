@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
 import "./navbar.css";
 import { BsFillPersonCheckFill,BsFillPersonPlusFill  } from "react-icons/bs";
 function LoginRegisterMenu() {
-  const [content, setContent] = useState({});
+  
 
   return (
     <ul className="navbar-nav ml-auto nav">
@@ -43,7 +42,7 @@ function LoginRegisterMenu() {
         >
           <BsFillPersonPlusFill/>
           &nbsp;
-          S'inscrir
+          S'inscrire
         </a>
         <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <Link className="dropdown-item" to="/regsupplier">

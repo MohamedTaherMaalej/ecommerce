@@ -50,13 +50,11 @@ function AddProduct() {
 
         .then((resp) => {
           let result = resp.data.data;
-          console.log(result);
 
-          Swal.fire("Product Added successfully");
+          Swal.fire("Succès d'ajout !");
           history.push("/myproducts");
         })
         .catch((error) => {
-          console.log("Error", error);
           Swal.fire({
             icon: "error",
             title: "Error Saving Product",

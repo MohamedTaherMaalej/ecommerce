@@ -1,34 +1,23 @@
 import { useEffect, useState } from "react";
-import Translation from "./Data.json";
 import "../App.css";
 import axios from "axios";
-import web1 from "../img/sales0.jpg";
-import ph2 from "../img/zc29.png";
-import ph1 from "../img/zc1.png";
-import ph3 from "../img/zc30.jpg";
-import ph4 from "../img/zc27.jpg";
-import web2 from "../img/sales1.jpg";
-import web3 from "../img/sales2.jpg";
-
+import big1 from "../img/biig1.jpg";
+import ph2 from "../img/argile.jpg";
+import ph1 from "../img/1.png";
+import ph3 from "../img/7.jpg";
+import ph4 from "../img/5.jpg";
+import big2 from "../img/big1.jpg";
+import big3 from "../img/big2.jpg";
 import ReactPaginate from "react-paginate";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useParams, useLocation } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import Product from "./Product";
 import queryString from "query-string";
 import Swal from "sweetalert2";
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
-// translation
 function Allproduct() {
-  const [language, setLanguage] = useState("english");
-  const [content, setContent] = useState({});
-
-  useEffect(() => {
-    if (language == "english") {
-      setContent(Translation.english);
-    } else if (language == "hindi") {
-      setContent(Translation.hindi);
-    }
-  });
 
   const [products, setProducts] = useState([]);
   const [totalPage, setTotalPage] = useState(0);
@@ -39,22 +28,17 @@ function Allproduct() {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const [showDialog, setShowDialog] = useState("modal fade");
+  const [modalShow, setModalShow] =useState(false);
   const [display, setDisplay] = useState("none");
 
   const showModal = (prod) => {
-    setShowDialog("modal fade show");
+    setModalShow(true);
     setDisplay("block");
     setItem(prod);
   };
 
   const checkItem = (prodid) => {
     return state.cart.findIndex((x) => x.prodid === prodid) < 0;
-  };
-
-  const closeDialog = () => {
-    setShowDialog("modal fade");
-    setDisplay("none");
   };
 
   const loadDataFromServer = (page = 0, pagesize = 8) => {
@@ -74,16 +58,12 @@ function Allproduct() {
   };
 
   useEffect(() => {
-    console.log("I am here cat", location.search);
     let pcat = queryString.parse(location.search);
-    console.log(pcat.cat);
     if (pcat.cat !== undefined) {
       axios
         .get("http://localhost:8080/api/products?cat=" + pcat.cat)
         .then((resp) => {
-          console.log(resp.data);
           setProducts(resp.data.data);
-          console.log(products);
         });
     } else {
       loadDataFromServer();
@@ -91,26 +71,25 @@ function Allproduct() {
   }, [location]);
   const addToCart = (item) => {
     if (sessionStorage.getItem("userid") == null) {
-      Swal.fire("Please Login", "You must Login the Account", "info");
+      Swal.fire("Inscrivez-vous", "", "info");
       history.push("/clogin");
     } else if (sessionStorage.getItem("role") !== "customer") {
-      Swal.fire("Please Login", "Only customer can buy product", "warning");
+      Swal.fire("Inscrivez-vous", "Seulement le client peut acheter des produits", "warning");
     } else {
       if (checkItem(item.prodid)) {
         showModal();
         setDisplay("none");
-        setShowDialog("modal fade");
         item.qty = qty;
         dispatch({ type: "AddItem", payload: item });
         Swal.fire({
           position: "top-end",
           icon: "success",
-          title: "Item added to cart successfully",
+          title: "Succès d'ajout",
           showConfirmButton: false,
           timer: 1500,
         });
       } else {
-        Swal.fire("Cart", "Item already in cart", "success");
+        Swal.fire("Cart", "Produit déjà dans le pannier", "success");
       }
     }
   };
@@ -156,54 +135,28 @@ function Allproduct() {
                 <div class="carousel-inner">
                   <div class="carousel-item active">
                     <img
-                      src={web3}
+                      src={big3}
                       class="d-block w-100"
                       height={350}
                       alt="..."
                     />
-                    <div class="carousel-caption d-none d-md-block">
-                      <div class="container">
-                        <div class="content">
-                          <p style={{ color: "##F9FEFD", fontSize: "2em" }}>
-                            {" "}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
+                    
+                </div>
+                  <div class="carousel-item">
+                    <img
+                      src={big2}
+                      class="d-block w-100"
+                      height={350}
+                      alt="..."
+                    />
                   </div>
                   <div class="carousel-item">
                     <img
-                      src={web2}
+                      src={big1}
                       class="d-block w-100"
                       height={350}
                       alt="..."
                     />
-                    <div class="carousel-caption d-none d-md-block">
-                      <div class="container">
-                        <div class="content">
-                          <p style={{ color: "##F9FEFD", fontSize: "2em" }}>
-                            {"PROMO"}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img
-                      src={web1}
-                      class="d-block w-100"
-                      height={350}
-                      alt="..."
-                    />
-                    <div class="carousel-caption d-none d-md-block">
-                      <div class="container">
-                        <div class="content">
-                          <p style={{ color: "##F9FEFD", fontSize: "2em" }}>
-                            {"Nouveau"}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
                   </div>
                 </div>
                 <a
@@ -216,7 +169,7 @@ function Allproduct() {
                     class="carousel-control-prev-icon"
                     aria-hidden="true"
                   ></span>
-                  <span class="sr-only">Previous</span>
+                  <span class="sr-only">Précendent</span>
                 </a>
                 <a
                   class="carousel-control-next"
@@ -228,10 +181,10 @@ function Allproduct() {
                     class="carousel-control-next-icon"
                     aria-hidden="true"
                   ></span>
-                  <span class="sr-only">Next</span>
+                  <span class="sr-only">Suivant</span>
                 </a>
               </div>
-              <div>
+              <div style={{paddingTop:"5%"}}>
                 <div class="row mx-auto">
                   <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="course_card">
@@ -335,33 +288,30 @@ Sa résistance et sa robustesse en font un choix parfait pour les produits qui s
             </div>
           </div>
           {display == "block" ? (
-            <div
-              className={showDialog}
-              style={{ zIndex: "1000", display: display }}
-            >
-              <div className="modal-dialog">
-                <div className="modal-content">
-                  <div className="modal-header">
-                    <h4 className="text-center p-4">
-                      <style>
+             <Modal
+             show={modalShow}
+             onHide={() => setModalShow(false)}
+             aria-labelledby="contained-modal-title-vcenter"
+             centered
+           >
+             <Modal.Header >
+               <Modal.Title id="contained-modal-title-vcenter">
+               <style>
                         @import
                         url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
                       </style>
-                      <b className="b">{content.Add1}</b>
-                    </h4>
-                    <button onClick={closeDialog} className="close">
-                      &times;
-                    </button>
-                  </div>
-                  <div className="modal-body">
-                    <div className="d-flex">
-                      <img
+                      <b className="b">Ajouter article</b>
+               </Modal.Title>
+             </Modal.Header>
+             <Modal.Body>
+              <div className="d-flex">
+             <img
                         src={"http://localhost:8080/" + item.photo}
                         style={{ width: "240px" }}
                       />
                       <div className="ml-3">
                         <h4 className="px-2">
-                          <b>Name: </b>
+                          <b>Nom: </b>
                           {item.pname}
                         </h4>
                         <h5 className="px-2">
@@ -369,20 +319,20 @@ Sa résistance et sa robustesse en font un choix parfait pour les produits qui s
                           {item.brand}
                         </h5>
                         <h5 className="px-2">
-                          <b>Category: </b>
+                          <b>Categorie: </b>
                           {item.pcat}
                         </h5>
                         <h5 className="px-2">
-                          <b>Seller: </b>
+                          <b>Vendeur: </b>
                           {item.sellerName}
                         </h5>
                         <h4 className="px-2" class="text-danger">
                           {" "}
-                          <b>Price:</b> &#8377; {item.price}{" "}
+                          <b>Prix:</b>{" "}{item.price}{" DT"}{" "}
                         </h4>
                         <label for="quantity">
                           {" "}
-                          <b>Qty :</b>{" "}
+                          <b>quantité :</b>{" "}
                           <input
                             type="number"
                             id="quantity"
@@ -393,19 +343,12 @@ Sa résistance et sa robustesse en font un choix parfait pour les produits qui s
                           />
                         </label>
                       </div>
-                    </div>
-                  </div>
-                  <div className="modal-footer">
-                    <button
-                      onClick={(e) => addToCart(item)}
-                      className="btn btn-warning btn-sm"
-                    >
-                      {content.Add}
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+                      </div>
+             </Modal.Body>
+             <Modal.Footer>
+               <Button onClick={(e)=>addToCart(item)}>Ajouter au pannier</Button>
+             </Modal.Footer>
+           </Modal>
           ) : (
             ""
           )}

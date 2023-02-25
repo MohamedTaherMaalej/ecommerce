@@ -1,12 +1,9 @@
 package ecommerce.controllers;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,22 +29,11 @@ public class SellerController {
 		return Response.success(seller);
 	}
 	
-	@GetMapping
-	public ResponseEntity<?> findAllCustomers() {
-		List<Seller> result = sellerService.allSellers();
-		return Response.success(result);
-	}
 	
 	@GetMapping("{id}")
 	public ResponseEntity<?> findSellerProfile(@PathVariable("id") int id) {
 		Seller result = sellerService.findById(id);
 		return Response.success(result);
-	}
-	
-	@DeleteMapping("{id}")
-	public ResponseEntity<?> deleteSeller(@PathVariable("id") int id) {
-		sellerService.deleteSeller(id);
-		return Response.status(HttpStatus.OK);
 	}
 	
 	@PostMapping("/validate")

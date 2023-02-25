@@ -1,6 +1,5 @@
 package ecommerce.services;
 
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,12 +18,6 @@ public class SellerServiceImpl implements SellerService {
 	}
 
 	@Override
-	public List<Seller> allSellers() {
-		// TODO Auto-generated method stub
-		return dao.findAll();
-	}
-
-	@Override
 	public Seller findById(int id) {
 		// TODO Auto-generated method stub
 		return dao.getById(id);
@@ -37,13 +30,6 @@ public class SellerServiceImpl implements SellerService {
 			return seller;
 		}
 		return null;
-	}
-
-	@Override
-	public void deleteSeller(int id) {
-		// TODO Auto-generated method stub
-		Seller seller=dao.getById(id);
-		dao.delete(seller);
 	}
 
 }
